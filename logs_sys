@@ -1,0 +1,16 @@
+import os
+
+# Создаем папку 'logs' (если она не существует)
+os.makedirs('logs', exist_ok=True)
+
+# Найдем все файлы с расширением .py в текущей директории
+py_files = [f for f in os.listdir('.') if f.endswith('.py')]
+
+# Запишем названия найденных файлов в файл 'logs/files_list.txt'
+with open('logs/files_list.txt', 'w') as file:
+    for file_name in py_files:
+        file.write(file_name + '\n')
+
+# Выведем полный код скрипта
+print("Код скрипта:")
+print("
